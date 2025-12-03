@@ -1,0 +1,24 @@
+# Legacy Service - Poetry Only
+# This package has not been migrated to UV yet
+
+[tool.poetry]
+name = "legacy-service"
+version = "1.0.0"
+description = "Legacy service still using Poetry"
+authors = ["Legacy Team <legacy@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.109.0"
+uvicorn = "^0.27.0"
+# Depends on shared-lib (internal)
+shared-lib = {path = "../shared-lib", develop = true}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+black = "^24.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

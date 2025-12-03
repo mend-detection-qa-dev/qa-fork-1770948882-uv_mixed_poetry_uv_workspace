@@ -1,0 +1,22 @@
+# UV Workspace Root Configuration
+# This workspace is managing a gradual migration from Poetry to UV
+
+[project]
+name = "mixed-poetry-uv-workspace"
+version = "1.0.0"
+description = "Workspace with mixed Poetry and UV packages"
+requires-python = ">=3.10"
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.0.0",
+    "ruff>=0.3.0",
+    "mypy>=1.8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
